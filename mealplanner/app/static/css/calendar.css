@@ -94,11 +94,11 @@ li{
     padding: 8px;
 }
 .backward{
-    float:left;
+    float: left;
     transform: rotate(180deg);
 }
 .forward{
-    float:right;
+    float: right;
 }
 .backward, .forward{
     width: 80px;
@@ -106,7 +106,15 @@ li{
     fill: rgba(255,255,255,.8);
     cursor: pointer;
     padding: 0;
-    margin:0;
+    margin: 0;
+}
+#fav_recipes{
+    padding: 2rem;
+    color: white;
+    text-align: center;
+}
+.favs{
+    padding: .5rem;
 }
 .box{
     position: absolute;
