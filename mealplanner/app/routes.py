@@ -7,16 +7,9 @@ from app.forms import addMeal, LoginForm
 from app.models import Post, User, update
 from app.getAllDates import get_all_dates
 from app.listIngredients import ingredients_from_web
+from app.getFavRecipes import get_favs
 import logging
 logger = logging.getLogger(__name__)
-
-# set up Logger so we can fetch favorite recipes
-formatter = logging.Formatter('%(message)s')
-handler = logging.FileHandler('past_recipes.log')
-handler.setFormatter(formatter)
-recipe_logger = logging.getLogger('fav_recipes')
-recipe_logger.setLevel('INFO')
-recipe_logger.addHandler(handler)
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -41,7 +34,6 @@ def add_meal_weeks(w):
             ingredients = request.form['ingredients']
             url = request.form['url']
             if "http" in url:
-                recipe_logger.info(url)
                 parsed_ingredients = ingredients_from_web(url)
                 if parsed_ingredients:
                     # only override the user's ingredients if we got some parsed back 
@@ -52,7 +44,7 @@ def add_meal_weeks(w):
 
         return render_template('calendar.html', all_week_dates=get_all_dates(w),
                                days=['Sun', 'Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat'],
-                               posts=Post.query.all(), w=w, form=form)
+                               posts=Post.query.all(), w=w, form=form, favs=get_favs())
     else:
         logging.debug(f'{request.remote_addr} Client accessed "/week/<i>" but no user is logged in. Redirecting to "login"')
         return redirect(url_for('login'))

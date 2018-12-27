@@ -11,9 +11,9 @@ app = Flask(__name__)
 
 login = LoginManager(app)
 
-app.secret_key = "superlongstringthisisnottheactualkey..."
+app.secret_key = "wejkrhwkehrkwjehr,wer323r23r"
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.db'
 db = SQLAlchemy(app)
 
 
-from app import routes, models, forms, listIngredients, getAllDates
+from app import routes, models, forms, listIngredients, getAllDates, getFavRecipes
