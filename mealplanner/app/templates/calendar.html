@@ -56,6 +56,14 @@ C73.8417088,61.1080387 73.8417088,58.8919613 72.4748737,57.5251263 L52.4748737,3
 31.1080387,63.8417088 32.4748737,62.4748737 L50.0095722,44.9401752 L67.5251263,62.4748737 Z" transform="translate(50.000000, 50.000000) 
 rotate(90.000000) translate(-50.000000, -50.000000) "/></g></g></svg>
     </div>
+<div id="fav_recipes">
+<div id="fav_recipes_title">Recipes that appear the most:</div><!--fav_recipe_title-->
+{% for fav in favs %}
+
+<div class="fav">{{ fav }}</div><!!--fav-->
+
+{% endfor %}
+</div><!--fav_recipes-->
         <div class="box no_click starting">
           <svg class="close" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path fill="none" d="M0 
 0h24v24H0V0z"/><path d="M18.3 5.71c-.39-.39-1.02-.39-1.41 0L12 10.59 7.11 5.7c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41L10.59 12 5.7 
