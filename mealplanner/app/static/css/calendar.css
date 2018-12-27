@@ -1,0 +1,222 @@
+html {
+  box-sizing: border-box;
+  background: url(../bg.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+body{
+    margin:0;
+    padding:0;
+    font-family: sans-serif;
+}
+a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+    color: #014565;
+}
+a:hover{
+    color: black;
+}
+#wrapper{
+    width: 98%;
+    margin: auto;
+}
+.flex{
+    display: flex;
+}
+.all_days{
+    padding-top: 15px;
+}
+.day:first-of-type {
+    border-left: 1px black solid;
+    background: rgba(255,255,255,.9);
+}
+.day{
+    display: inline-block;
+    border-top: 1px black solid;
+    border-right: 1px black solid;
+    border-bottom: 1px black solid;
+    display: inline-block;
+    min-height: 180px;
+    flex: 1 1 0;
+    flex-basis: 100%;
+    width: 0; /*This was needed to keep the days all equal even if the content inside them was trying to push them wider.*/
+    text-align: center;
+    word-wrap: break-word;
+    background: rgba(255,255,255,.7);
+    padding: 10px;
+    font-size:.8rem;
+    font-family: 'Cabin', sans-serif;
+}
+.day:last-of-type {
+    background: rgba(255,255,255,.9);
+}
+.day > span{
+    display: block;
+    font-size: 1.8rem;
+    padding: 10px 5px;
+    text-transform: uppercase;
+    font-family: 'Black Han Sans', sans-serif;
+    font-size: 1.3rem;
+}
+.date{
+    font-family: 'Black Han Sans', sans-serif;
+    cursor: pointer;
+}
+.title{
+    padding: 15px 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+}
+.ingredient, .ingredients{
+    text-align: left;
+}
+ul{
+    padding: 10px;
+    margin: 0px;
+}
+li{
+    font-size: .7rem;
+}
+.li{
+    /*This is how we are moving the text closer to the 'dot' for li elements!*/
+   /* position: relative;*/
+   left: -20px;
+   color:red;
+}
+.notes{
+    background: rgba(0, 0, 0,.2);
+    margin: 10px 0px;
+    padding: 8px;
+}
+.backward{
+    float:left;
+    transform: rotate(180deg);
+}
+.forward{
+    float:right;
+}
+.backward, .forward{
+    width: 80px;
+    height: 80px;
+    fill: rgba(255,255,255,.8);
+    cursor: pointer;
+    padding: 0;
+    margin:0;
+}
+.box{
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    width: 600px;
+    padding: 15px;
+    background: rgba(0,0,0,0.9);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.9);
+    border-radius: 10px;
+    border: 2px solid #000;
+}
+.box .close{
+    position: absolute;
+    fill: rgba(255,255,255,.8);
+    right: 15px;
+    top: 15px;
+    cursor: pointer;
+}
+.box .date_label{
+    width:100%;
+    font-size: 19px;
+    color: #fff;
+    position: relative;
+    border:none;
+    top: 0px;
+    background: transparent;
+    padding: 0 0 20px 0;
+    font-family: 'Black Han Sans', sans-serif;
+
+}
+.box .inputbox{
+    position:relative;
+}
+.box .inputbox input, 
+.box .inputbox textarea
+{
+    width:100%;
+    padding: 10px 0;
+    font-size: 13px;
+    color: #fff;
+    margin-bottom: 30px;
+    border:none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+    overflow:hidden;
+}
+.box .inputbox textarea{
+    resize: none;
+}
+.box .inputbox label,
+.date_label{
+    position: absolute;
+    top:-18px;
+    left:0;
+    padding: 10px 0;
+    font-size: 12px;
+    color: #03a9f4;
+    pointer-events: none;
+    transition: .5s;
+}
+.box input[type="submit"]{
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #03a9f4;
+    padding: 10px 20px;
+    margin: 10px 0;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+.fadeOut {
+    -webkit-animation-duration: .5s;animation-duration: 0s;
+    -webkit-animation-fill-mode: both;animation-fill-mode: both;
+    -webkit-animation-name: fadeOut;
+    animation-name: fadeOut;
+    z-index: -999
+ }
+ 
+ @-webkit-keyframes fadeOut {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+ }
+ 
+ @keyframes fadeOut {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+ }
+ .fadeIn {
+    -webkit-animation-duration: .5s;animation-duration: .5s;
+    -webkit-animation-fill-mode: both;animation-fill-mode: both;
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+ }
+ 
+ @-webkit-keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+ }
+ 
+ @keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+ }
+ .starting{
+     opacity: 0;
+     z-index: -999;
+ }

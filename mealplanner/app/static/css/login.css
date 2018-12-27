@@ -1,0 +1,70 @@
+html {
+  box-sizing: border-box;
+  background: url(../bg.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+body{
+  margin:0;
+  padding:0;
+}
+#wrapper{
+  width: 98%;
+  margin: auto;
+}
+.box{
+  position: absolute;
+  left:50%;
+  top:50%;
+  transform: translate(-50%,-50%);
+  width: 400px;
+  padding: 15px;
+  background: rgba(0,0,0,0.9);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0,0,0,0.9);
+  border-radius: 10px;
+  border: 2px solid #000;
+}
+.box .inputbox{
+    position:relative;
+    padding-top:10px;
+}
+.box input{
+    width:100%;
+    padding: 10px 0;
+    font-size: 13px;
+    color: #fff;
+    margin-bottom: 30px;
+    border:none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+    overflow:hidden;
+}
+.box label{
+    position: relative;
+    padding: 10px 0;
+    font-size: 14px;
+    color: #03a9f4;
+    pointer-events: none;
+    transition: .5s;
+}
+.box input[type="submit"]{
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #03a9f4;
+    padding: 10px 20px;
+    margin: 10px 0;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    float: right;
+    width: 150px;
+}
