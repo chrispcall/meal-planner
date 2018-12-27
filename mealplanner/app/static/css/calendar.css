@@ -113,6 +113,10 @@ li{
     color: white;
     text-align: center;
 }
+#fav_recipes_title{
+    padding:1rem;
+    font-weight: bold;
+}
 .favs{
     padding: .5rem;
 }
