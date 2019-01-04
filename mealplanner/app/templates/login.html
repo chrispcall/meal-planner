@@ -1,17 +1,7 @@
-<!--What's left!: Get a login thing going.  Figure out how the 'app.secret_key' thing works. Get forward and backward buttons working.-->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Meal Plan - Sign In</title>
-    <!--chevron by Landan Lloyd from the Noun Project-->
-    <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/login.css') }}">
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-</head>
-<body>
-    <div id="wrapper">
+    {% extends "base.html" %}
+{% block title %}Meal Planner - Login{% endblock %}
+
+{% block content %}
   <div class="box">
     <form action="" method="post" novalidate>
         {{ form.hidden_tag() }}
@@ -27,9 +17,4 @@
 {{ form.submit() }}
     </form>
   </div><!--box-->
-</div><!--wrapper-->
-
-<script src="{{ url_for('static', filename='javascript/script.js') }}"></script>
-
-</body>
-</html>
+{% endblock %}

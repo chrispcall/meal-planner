@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <!--chevron by Landan Lloyd from the Noun Project-->
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='16.png') }}">
+    <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/calendar.css') }}">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+</head>
+<body>
+    <div id="wrapper">
+
+{% block content %}{% endblock %}
+
+    </div><!--wrapper-->
+
+<script src="{{ url_for('static', filename='javascript/script.js') }}"></script>
+
+</body>
+</html>

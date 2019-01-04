@@ -1,16 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Meal Plan</title>
-    <!--chevron by Landan Lloyd from the Noun Project-->
-    <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/calendar.css') }}">
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-</head>
-<body>
-    <div id="wrapper">
+    {% extends "base.html" %}
+{% block title %}Meal Planner{% endblock %}
+
+{% block content %}
     <div class="all_days">
     <div class="flex">
     {% for date in all_week_dates %}
@@ -91,10 +82,4 @@ rotate(90.000000) translate(-50.000000, -50.000000) "/></g></g></svg>
 
       </form>
         </div><!--add_meal-->
-
-</div><!--wrapper-->
-
-<script src="{{ url_for('static', filename='javascript/script.js') }}"></script>
-
-</body>
-</html>
+{% endblock %}
